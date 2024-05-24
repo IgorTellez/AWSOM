@@ -13,6 +13,11 @@
 #              - numRegressors: indicate with an integer the number of regressors used in the analysis
 #              - outputPath: path to the output folder
 #
+#              If the GLM analysis has been performed with FSL, the necessary files are located in the folder named 'stats' 
+#              within the output folder, normally named with the suffix '.feat'. The default names of the required files are: 
+#              -cope*.nii.gz
+#              -res4d.nii.gz
+#              -varcope*.nii.gz
 #
 #              To run the awsom.R script you need to have R installed, 
 #              as well as the following libraries:
