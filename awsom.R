@@ -15,7 +15,6 @@
 
 # Load required libraries
 library(fmri)
-library(RNifti)
 library(oro.nifti)
 
 
