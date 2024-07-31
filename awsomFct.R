@@ -15,7 +15,6 @@
 
 
 library(fmri)
-library(RNifti)
 library(oro.nifti)
 
 awsom <- function(cbetaFile, # FSL cope1.nii.gz
