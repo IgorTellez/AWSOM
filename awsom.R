@@ -10,7 +10,7 @@
 #   - Karsten Tabelow (karsten.tabelow@wias-berlin.de) - AWS & AWSOM developer
 #
 # Created: 2023-12-02
-# Last Modified: 2024-05-23
+# Last Modified: 2024-07-31
 # ------------------------------------------------------------------------
 
 # Load required libraries
@@ -36,7 +36,6 @@ outputPath <- args[6]
 # Read the NIfTI files
 cbeta <- readNIfTI(cbetaFile, reorient = FALSE)
 res <- readNIfTI(resFile, reorient = FALSE)
-vol3d <- readNIfTI(maskFile, reorient = FALSE)
 mask <- as.logical(readNIfTI(maskFile, reorient = FALSE))
 
 # Function definitions
@@ -107,12 +106,12 @@ spm.smooth <- fmri.smooth(spm, hmax = 4, adaptation = "fullaws", ladjust = adjPa
 pvalueawsom <- fmri.pvalue(spm.smooth)
 tempData <- pvalueawsom$pvalue
 tempData[is.na(tempData)] <- 0
-pValAWSOM <- vol3d
+pValAWSOM <- mask
 pValAWSOM@.Data <- tempData
 writeNifti(pValAWSOM,paste(outputPath,"/AWSOM_pVal", sep =""))
 
 # Writing AWSOM COPE map
-cope <- vol3d
+cope <- mask
 cope@.Data <- spm.smooth$cbeta
 writeNifti(cope,paste(outputPath,"/AWSOM_cope", sep =""))
 
