@@ -18,7 +18,7 @@ library(fmri)
 library(RNifti)
 library(oro.nifti)
 
-awssom <- function(cbetaFile, # FSL cope1.nii.gz
+awsom <- function(cbetaFile, # FSL cope1.nii.gz
                    resFile,   # FSL res4d.nii.gz
                    varFile,   # FSL varcope1.nii.gz
                    maskFile,  # mask file
