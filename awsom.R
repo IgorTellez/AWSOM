@@ -118,6 +118,13 @@ cope@bitpix <- 32L
 cope@datatype <- 16
 writeNIfTI(cope,paste(outputPath,"/AWSOM_cope", sep =""), gzipped = FALSE)
 
+# Writing AWSOM VARCOPE map
+varcope <- mask
+varcope@.Data <- spm.smooth$var
+varcope@bitpix <- 32L
+varcope@datatype <- 16
+writeNIfTI(varcope,paste(outputPath,"/AWSOM_varcope", sep =""), gzipped = FALSE)
+
 rm(list = ls())
 print("DONE")
 # End of script
