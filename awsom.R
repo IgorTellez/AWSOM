@@ -107,12 +107,16 @@ tempData <- pvalueawsom$pvalue
 tempData[is.na(tempData)] <- 0
 pValAWSOM <- mask
 pValAWSOM@.Data <- tempData
-writeNifti(pValAWSOM,paste(outputPath,"/AWSOM_pVal", sep =""))
+pValAWSOM@bitpix <- 32L
+pValAWSOM@datatype <- 16
+writeNIfTI(pValAWSOM,paste(outputPath,"/AWSOM_pVal", sep =""), gzipped = FALSE)
 
 # Writing AWSOM COPE map
 cope <- mask
 cope@.Data <- spm.smooth$cbeta
-writeNifti(cope,paste(outputPath,"/AWSOM_cope", sep =""))
+cope@bitpix <- 32L
+cope@datatype <- 16
+writeNIfTI(cope,paste(outputPath,"/AWSOM_cope", sep =""), gzipped = FALSE)
 
 rm(list = ls())
 print("DONE")
