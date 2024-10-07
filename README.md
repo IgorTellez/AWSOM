@@ -38,7 +38,7 @@ If you used **FSL** for your GLM analysis, these files are typically located in 
 - `cope*.nii.gz` (COPE file)
 - `res4d.nii.gz` (residuals file)
 - `varcope*.nii.gz` (variance COPE file)
-- A brain mask (optional)
+- A brain mask
 
 ## Running the AWSOM Filter
 
@@ -64,3 +64,11 @@ Rscript awsom.R "$copePath" "$residualsPath" "$varianceCopePath" "$maskPath" "$n
 
 # Switching p-value maps to z-values:
 fslmaths $outputPath/AWSOM_pVal.nii -ptoz $outputPath/AWSOM_zStat.nii.gz
+```
+### AWSOM Filter and Comparisons
+
+For more details about the AWSOM filter, its tests, and comparisons with Gaussian and non-local filters, refer to the publication: [Precision fMRI and cluster-failure in the individual brain](https://onlinelibrary.wiley.com/doi/10.1002/hbm.26813).
+
+For information regarding the AWS filter, please refer to: [Analyzing fMRI experiments with structural adaptive smoothing procedures](https://www.sciencedirect.com/science/article/abs/pii/S1053811906007117?via%3Dihub).
+
+
