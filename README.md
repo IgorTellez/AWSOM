@@ -69,6 +69,13 @@ fslmaths $outputPath/AWSOM_pVal.nii -ptoz $outputPath/AWSOM_zStat.nii.gz
 
 For more details about the AWSOM filter, its tests, and comparisons with Gaussian and non-local filters, refer to the publication: [Precision fMRI and cluster-failure in the individual brain](https://onlinelibrary.wiley.com/doi/10.1002/hbm.26813).
 
+
+
 For information regarding the AWS filter, please refer to: [Analyzing fMRI experiments with structural adaptive smoothing procedures](https://www.sciencedirect.com/science/article/abs/pii/S1053811906007117?via%3Dihub).
 
 
+Any questions, comments or suggestions can be directed to:
+
+Igor Tellez [igor.tellez@gmail.com](mailto:igor.tellez@gmail.com)
+
+Karsten Tabelow [karsten.tabelow@wias-berlin.de](mailto:karsten.tabelow@wias-berlin.de)
